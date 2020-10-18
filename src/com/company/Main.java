@@ -56,11 +56,14 @@ public class Main {
         // a loop as in the example below.
         //
         // Create a string data array to avoid typing loads of addItem instructions:
-        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String stringData1 = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String stringData2 = " 112 Vlad Rares Adrian Adrian Aaron Bogdan Xena Adriana Ionel Zara Adrian";
 
-        String[] data = stringData.split(" ");
-        for (String s : data) {
-            // create new item with value set to the string s
+        String[] testDataArray1 = stringData1.split(" ");
+        String[] testDataArray2 = stringData2.split(" ");
+
+        for (String s : testDataArray1) {
+
         }
 
 
