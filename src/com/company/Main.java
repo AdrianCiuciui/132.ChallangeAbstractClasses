@@ -56,15 +56,26 @@ public class Main {
         // a loop as in the example below.
         //
         // Create a string data array to avoid typing loads of addItem instructions:
+
+        MyLinkedList list = new MyLinkedList(null);
+        list.traverse(list.getRoot());
+
+
+
+
+
+
         String stringData1 = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
         String stringData2 = " 112 Vlad Rares Adrian Adrian Aaron Bogdan Xena Adriana Ionel Zara Adrian";
 
         String[] testDataArray1 = stringData1.split(" ");
         String[] testDataArray2 = stringData2.split(" ");
 
-        for (String s : testDataArray1) {
-
+        for (String s : testDataArray2) {
+            list.addItem(new Node(s));
         }
+
+        list.traverse(list.getRoot());
 
 
 
