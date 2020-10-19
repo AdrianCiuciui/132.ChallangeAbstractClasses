@@ -60,22 +60,24 @@ public class Main {
         MyLinkedList list = new MyLinkedList(null);
         list.traverse(list.getRoot());
 
-
-
-
-
-
         String stringData1 = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
         String stringData2 = " 112 Vlad Rares Adrian Adrian Aaron Bogdan Xena Adriana Ionel Zara Adrian";
+        String stringData3 = " 2 7 7 7 7";
 
         String[] testDataArray1 = stringData1.split(" ");
         String[] testDataArray2 = stringData2.split(" ");
+        String[] testDataArray3 = stringData3.split(" ");
 
-        for (String s : testDataArray2) {
+        for (String s : testDataArray3) {
             list.addItem(new Node(s));
         }
 
         list.traverse(list.getRoot());
+        list.removeItem(new Node ("7"));
+        list.traverse(list.getRoot());
+        list.removeItem(list.getRoot());
+        list.traverse(list.getRoot());
+
 
 
 
