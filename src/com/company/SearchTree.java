@@ -47,7 +47,65 @@ public class SearchTree implements NodeList {
 
     @Override
     public boolean removeItem(ListItem item) {
+        if (item != null) {
+            System.out.println("Deleting item " + item.getValue());
+        }
+        ListItem currentItem = this.root;
+        ListItem parentItem = currentItem;
+
+        while (currentItem != null) {
+            int comparison = (currentItem.compareTo(item));
+            if (comparison < 0) {
+                parentItem = currentItem;
+                currentItem = currentItem.next();
+            } else if (comparison > 0) {
+                parentItem = currentItem;
+                currentItem = currentItem.previous();
+            } else {
+                performRemoval (currentItem, parentItem);
+                return true;
+            }
+        }
         return false;
+    }
+
+    private void performRemoval (ListItem item, ListItem parent) {
+        // remove item from tree
+        if (item.next() == null) {
+            // no right tree, so make parent point to left tree which may be null
+            if (parent.next() == item) {
+                // item is right child of it's parent
+                parent.setNext(item.previous());
+            } else if (parent.previous() == item) {
+                // item is left child of it's parent
+                parent.setPrevious(item.previous());
+            } else {
+                // parent must be item, which means we were looking at the root of the tree
+                this.root = item.previous();
+            }
+        } else if (item.previous() == null) {
+            if (parent.next() == item) {
+                parent.setNext(item.next());
+            } else if (parent.previous() == item) {
+                parent.setPrevious(item.next());
+            } else {
+                this.root = item.next();
+            }
+        } else {
+            ListItem current = item.next();
+            ListItem leftmostParent = item;
+
+            while (current.previous() != null) {
+                leftmostParent = current;
+                current = current.previous();
+            }
+            item.setValue(current.getValue());
+            if (leftmostParent == item) {
+                item.setNext(current.next());
+            } else {
+                leftmostParent.setPrevious(current.next());
+            }
+        }
     }
 
     @Override

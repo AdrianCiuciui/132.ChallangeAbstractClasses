@@ -67,40 +67,15 @@ public class Main {
         String[] testDataArray2 = stringData2.split(" ");
         String[] testDataArray3 = stringData3.split(" ");
 
-        for (String s : testDataArray2) {
+        for (String s : testDataArray3) {
             tree.addItem(new Node(s));
         }
 
         tree.traverse(tree.getRoot());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        tree.removeItem(new Node("2"));
+        tree.traverse(tree.getRoot());
+        tree.removeItem(new Node("7"));
+        tree.traverse(tree.getRoot());
 
     }
 }
