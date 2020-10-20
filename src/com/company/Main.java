@@ -57,8 +57,7 @@ public class Main {
         //
         // Create a string data array to avoid typing loads of addItem instructions:
 
-        MyLinkedList list = new MyLinkedList(null);
-        list.traverse(list.getRoot());
+        SearchTree tree = new SearchTree(null);
 
         String stringData1 = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
         String stringData2 = " 112 Vlad Rares Adrian Adrian Aaron Bogdan Xena Adriana Ionel Zara Adrian";
@@ -68,15 +67,11 @@ public class Main {
         String[] testDataArray2 = stringData2.split(" ");
         String[] testDataArray3 = stringData3.split(" ");
 
-        for (String s : testDataArray3) {
-            list.addItem(new Node(s));
+        for (String s : testDataArray2) {
+            tree.addItem(new Node(s));
         }
 
-        list.traverse(list.getRoot());
-        list.removeItem(new Node ("7"));
-        list.traverse(list.getRoot());
-        list.removeItem(list.getRoot());
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
 
 
