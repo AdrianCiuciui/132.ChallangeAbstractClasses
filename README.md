@@ -1,3 +1,11 @@
+         Short version: order in ascending order an input of characters and save them into a class
+         Example of test data:         
+         String stringData1 = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+         String stringData3 = " 2 7 7 7 7";
+
+         
+         
+         Long version:
          For this challenge, create an abstract class to define items that can be stored in a list.
          The class should contain 2 references to items which will represent the next and previous
          items (in the case of a linked list).
